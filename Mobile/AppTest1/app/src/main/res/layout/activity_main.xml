@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical">
+
+    <!-- Tìm kiếm -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/borderradius">
+
+        <!-- Icon Search -->
+        <ImageView
+            android:id="@+id/icon_search"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/baseline_search_24"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="16dp" />
+
+        <!-- EditText cho ô nhập chữ -->
+        <EditText
+            android:id="@+id/edit_text_search"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:hint="Tìm địa chỉ liên hệ"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp" />
+
+        <!-- Biểu tượng Mic -->
+        <ImageView
+            android:id="@+id/icon_mic"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/baseline_mic_24"
+            android:layout_gravity="center_vertical" />
+
+        <!-- Biểu tượng More Vert -->
+        <ImageView
+            android:id="@+id/icon_more_vert"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/baseline_more_vert_24"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="16dp" />
+    </LinearLayout>
+
+    <!-- Tạo liên hệ mới -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal"
+        android:paddingStart="16dp"
+        android:paddingTop="8dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="8dp"
+        android:layout_gravity="center_horizontal">
+
+        <!-- Biểu tượng Person Add -->
+        <ImageView
+            android:id="@+id/icon_person_add"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/baseline_person_add_alt_1_24"
+            android:layout_gravity="center_vertical" />
+
+        <!-- TextView với tiêu đề "Tạo người liên hệ mới" -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tạo người liên hệ mới"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="8dp" />
+
+    </LinearLayout>
+
+    <!-- Danh sách -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal"
+        android:paddingStart="16dp"
+        android:paddingTop="8dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="8dp"
+        android:layout_gravity="center_horizontal">
+
+        <!-- Cột 1: Chữ cái A (chiếm 2 phần) -->
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="A"
+            android:gravity="center"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="16dp" />
+
+        <!-- Cột 2: Hình tròn và Text "Number1" -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="8"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <!-- Hình tròn (sử dụng circle.xml) -->
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/circle"
+                android:layout_gravity="center_vertical" />
+
+            <!-- Text "Number1" -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Anh"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="8dp" />
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal"
+        android:paddingStart="16dp"
+        android:paddingTop="8dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="8dp"
+        android:layout_gravity="center_horizontal">
+
+        <!-- Cột 1: Chữ cái A (chiếm 2 phần) -->
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="B"
+            android:gravity="center"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="16dp" />
+
+        <!-- Cột 2: Hình tròn và Text "Number1" -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="8"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <!-- Hình tròn (sử dụng circle.xml) -->
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/circle"
+                android:layout_gravity="center_vertical" />
+
+            <!-- Text "Number1" -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Bảo"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="8dp" />
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal"
+        android:paddingStart="16dp"
+        android:paddingTop="8dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="8dp"
+        android:layout_gravity="center_horizontal">
+
+        <!-- Cột 1: Chữ cái A (chiếm 2 phần) -->
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="C"
+            android:gravity="center"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="16dp" />
+
+        <!-- Cột 2: Hình tròn và Text "Number1" -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="8"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <!-- Hình tròn (sử dụng circle.xml) -->
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/circle"
+                android:layout_gravity="center_vertical" />
+
+            <!-- Text "Number1" -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Chi"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="8dp" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

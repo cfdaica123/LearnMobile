@@ -1,5 +1,6 @@
 package son.dev.foodapp.data.dao;
 
+import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.Query;
@@ -7,7 +8,7 @@ import androidx.room.Query;
 import java.util.List;
 
 import son.dev.foodapp.data.model.Oder;
-
+@Dao
 public interface OderDao {
     @Query("SELECT * FROM oders")
     List<Oder> getAll();

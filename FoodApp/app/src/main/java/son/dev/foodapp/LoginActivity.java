@@ -63,7 +63,7 @@ public class LoginActivity extends AppCompatActivity implements LoginConstract.I
 
     @Override
     public void loginSuccess() {
-        Intent intent = new Intent(this, HomeActivity.class);
+        Intent intent = new Intent(this, CartActivity.class);
         startActivity(intent);
     }
 }

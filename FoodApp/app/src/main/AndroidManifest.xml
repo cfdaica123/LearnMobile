@@ -28,6 +28,9 @@
             android:name=".DetailActivity"
             android:exported="false" />
         <activity
+            android:name=".HomeActivity"
+            android:exported="false" />
+        <activity
             android:name=".SplasActivity"
             android:exported="true">
             <intent-filter>

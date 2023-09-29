@@ -8,7 +8,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import son.dev.foodapp.constract.LoginConstract;
 import son.dev.foodapp.constract.LoginPresenter;
@@ -63,7 +62,7 @@ public class LoginActivity extends AppCompatActivity implements LoginConstract.I
 
     @Override
     public void loginSuccess() {
-        Intent intent = new Intent(this, HomeActivity.class);
+        Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
 }

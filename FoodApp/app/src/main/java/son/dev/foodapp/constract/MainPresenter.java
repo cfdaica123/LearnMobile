@@ -11,11 +11,11 @@ import son.dev.foodapp.data.dao.ProductDao;
 import son.dev.foodapp.data.model.Product;
 import son.dev.foodapp.util.Constants;
 
-public class HomePresenter implements HomeConstract.IPresenter{
-    private HomeConstract.IView mView;
+public class MainPresenter implements MainConstract.IPresenter{
+    private MainConstract.IView mView;
     private Context mContext;
 
-    public HomePresenter(Context context, HomeConstract.IView view){
+    public MainPresenter(Context context, MainConstract.IView view){
         mContext = context;
         mView = view;
     }

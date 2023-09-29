@@ -11,10 +11,6 @@
         android:title="@string/menu_favourite" />
 
     <item
-        android:id="@+id/menu.empty"
-        android:title="Title" />
-
-    <item
         android:id="@+id/menu.library"
         android:icon="@drawable/ic_library"
         android:title="@string/menu_library" />

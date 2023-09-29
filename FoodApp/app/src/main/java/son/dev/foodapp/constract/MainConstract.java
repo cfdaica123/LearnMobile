@@ -4,7 +4,7 @@ import java.util.List;
 
 import son.dev.foodapp.data.model.Product;
 
-public interface HomeConstract {
+public interface MainConstract {
     interface IView{
         void updateProductListToView(List<Product> productList);
     }

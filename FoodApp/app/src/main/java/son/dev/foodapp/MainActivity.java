@@ -4,36 +4,36 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
-import android.view.View;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationBarView;
 
 import java.util.List;
 
-import son.dev.foodapp.constract.HomeConstract;
+import son.dev.foodapp.constract.MainConstract;
 import son.dev.foodapp.data.model.Product;
 import son.dev.foodapp.fragment.FavouriteFragment;
 import son.dev.foodapp.fragment.HomeFragment;
 import son.dev.foodapp.fragment.LibraryFragment;
 import son.dev.foodapp.fragment.SettingFragment;
 
-public class HomeActivity extends AppCompatActivity implements HomeConstract.IView {
+public class MainActivity extends AppCompatActivity implements MainConstract.IView {
     private BottomNavigationView bottomNavigationView;
-    private FloatingActionButton fab;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
+        setContentView(R.layout.activity_main);
 
+        initGUI();
+    }
+
+    private void initGUI() {
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
         bottomNavigationView.setBackground(null);
-        bottomNavigationView.getMenu().getItem(2).setEnabled(true);
+        bottomNavigationView.getMenu().getItem(2).setEnabled(false);
 
         Fragment homeFragment = new HomeFragment();
         Fragment favouriteFragment = new FavouriteFragment();
@@ -60,17 +60,7 @@ public class HomeActivity extends AppCompatActivity implements HomeConstract.IVi
                 return false;
             }
         });
-
-        fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(HomeActivity.this, DetailActivity.class);
-                startActivity(intent);
-            }
-        });
     }
-
     private void setCurrentFragment(Fragment fragment) {
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, fragment).commit();
     }

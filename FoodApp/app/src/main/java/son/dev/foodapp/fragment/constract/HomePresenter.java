@@ -22,7 +22,10 @@ public class HomePresenter implements HomeConstract.IPresenter{
         mContext = context;
         mView = view;
         db = Room.databaseBuilder(mContext,
-                AppDatabase.class, Constants.DB_NAME).build();
+                        AppDatabase.class, Constants.DB_NAME)
+                .allowMainThreadQueries()
+                .createFromAsset(Constants.DB_NAME)
+                .build();
     }
     @Override
     public void loadPopularProducts() {

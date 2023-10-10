@@ -18,4 +18,11 @@ public interface ProductDao {
 
     @Delete
     void delete(Product product);
+
+    @Query("SELECT * FROM products WHERE Id=:productId LIMIT 1")
+    Product find(int productId);
+
+    @Query("SELECT * FROM products WHERE category_id=:categoryId")
+    List<Product> findByCategory(int categoryId);
+
 }

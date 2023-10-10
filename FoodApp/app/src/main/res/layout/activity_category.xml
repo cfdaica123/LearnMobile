@@ -53,39 +53,11 @@
         android:layout_height="wrap_content"
         android:textSize="18sp"
         android:textStyle="bold"
-        android:layout_margin="10dp"
-        android:text="Categories"/>
-
+        android:layout_margin="10dp"/>
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv.category"
+        android:id="@+id/rv.products"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-
-    <!-- Popular -->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <TextView
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:textStyle="bold"
-            android:textSize="18sp"
-            android:layout_margin="10dp"
-            android:text="Popular"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="10dp"
-            android:textSize="18sp"
-            android:gravity="right"
-            android:text="See all"
-            android:textColor="@color/red" />
-    </LinearLayout>
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv.popular"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
 
 </LinearLayout>

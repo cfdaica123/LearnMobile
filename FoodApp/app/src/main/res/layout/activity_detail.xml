@@ -1,9 +1,89 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DetailActivity">
+    android:orientation="vertical"
+    android:background="@color/white">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/tv.name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:textSize="25sp"
+        android:text="Pepperoni"/>
+
+    <TextView
+        android:id="@+id/tv.price"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:textColor="@color/orange"
+        android:text="$ 9.76"
+        android:textSize="30sp"
+        android:textStyle="bold"/>
+
+    <ImageView
+        android:id="@+id/iv.product.thumbnail"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_marginTop="15dp"
+        android:src="@drawable/pizza"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center_horizontal"
+        android:padding="10dp"
+        android:gravity="center">
+        <ImageButton
+            android:id="@+id/ib.minus"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/ic_remove_circle"
+            android:textSize="50sp"/>
+        <TextView
+            android:id="@+id/tv.quantity"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text=" 2"
+            android:textSize="20sp"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:gravity="center"/>
+        <ImageButton
+            android:id="@+id/ib.plus"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/ic_add_circle"
+            android:textSize="50sp"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv.product.description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:text="Slice peperis......."
+        android:layout_margin="20dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:background="@drawable/button_rounded"
+            android:gravity="center"
+            android:text="Add to Cart"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,5 +1,6 @@
 package son.dev.foodapp.data.model;
 
+import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
@@ -10,21 +11,27 @@ public class Product {
     public int Id;
 
     @ColumnInfo(name = "name")
+    @NonNull
     public String name;
 
     @ColumnInfo(name = "description")
+    @NonNull
     public String description;
 
     @ColumnInfo(name = "thumbnail")
+    @NonNull
     public String thumbnail;
 
     @ColumnInfo(name = "price")
+    @NonNull
     public double price;
 
     @ColumnInfo(name = "quantity")
+    @NonNull
     public int quantity;
 
-    @ColumnInfo(name = "categoryId")
+    @ColumnInfo(name = "category_id")
+    @NonNull
     public int categoryId;
 
     public Product() {

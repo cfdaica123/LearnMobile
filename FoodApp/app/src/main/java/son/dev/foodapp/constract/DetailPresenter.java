@@ -11,25 +11,26 @@ import son.dev.foodapp.data.dao.ProductDao;
 import son.dev.foodapp.data.model.Product;
 import son.dev.foodapp.util.Constants;
 
-public class MainPresenter implements MainConstract.IPresenter{
-    private MainConstract.IView mView;
+public class DetailPresenter implements DetailConstract.IPresenter{
+    private DetailConstract.IView mView;
     private Context mContext;
 
-    public MainPresenter(Context context, MainConstract.IView view){
+    public DetailPresenter(Context context, DetailConstract.IView view){
         mContext = context;
         mView = view;
     }
+
     @Override
-    public void getProductList() {
+    public void getProduct(int productId) {
         AppDatabase db = Room.databaseBuilder(mContext,
-                AppDatabase.class, Constants.DB_NAME)
+                        AppDatabase.class, Constants.DB_NAME)
                 .allowMainThreadQueries()
                 .createFromAsset(Constants.DB_NAME)
                 .build();
 
         ProductDao productDao = db.productDao();
-        List<Product> productList = productDao.getAll();
+        Product product = productDao.find(productId);
 
-        mView.updateProductListToView(productList);
+        mView.updateProductUI(product);
     }
 }

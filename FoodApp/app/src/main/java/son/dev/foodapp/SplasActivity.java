@@ -16,7 +16,7 @@ public class SplasActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent i = new Intent(SplasActivity.this, MainActivity.class);
+                Intent i = new Intent(SplasActivity.this, LoginActivity.class);
                 startActivity(i);
                 finish();
             }

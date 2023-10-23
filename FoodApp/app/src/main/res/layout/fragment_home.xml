@@ -37,9 +37,9 @@
 
         <ImageView
             android:id="@+id/iv.cart"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:src="@drawable/profile"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/baseline_shopping_cart_24"
             android:clickable="true"/>
 
     </LinearLayout>

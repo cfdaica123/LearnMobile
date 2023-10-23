@@ -7,11 +7,13 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 
 import son.dev.foodapp.constract.DetailConstract;
 import son.dev.foodapp.constract.DetailPresenter;
+import son.dev.foodapp.data.model.OrderItem;
 import son.dev.foodapp.data.model.Product;
 import son.dev.foodapp.util.Constants;
 
@@ -22,8 +24,11 @@ public class DetailActivity extends AppCompatActivity implements DetailConstract
 
     private ImageButton ibMinus;
     private ImageButton ibPlus;
+    private TextView btn_Add;
     private TextView tvQuantity;
     private TextView tvDescription;
+
+    private Product currentProduct;
 
     private DetailConstract.IPresenter mPresenter;
     @Override
@@ -67,10 +72,26 @@ public class DetailActivity extends AppCompatActivity implements DetailConstract
                 tvQuantity.setText(quantity + "");
             }
         });
+
+        btn_Add = findViewById(R.id.btn_add);
+        btn_Add.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                OrderItem od = new OrderItem();
+                od.orderId = 0;
+                od.productId = currentProduct.Id;
+                od.price = currentProduct.price;
+                od.quantity = Integer.parseInt(tvQuantity.getText().toString().trim());
+                mPresenter.order(od);
+                Toast.makeText(DetailActivity.this, "Order Success", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     @Override
     public void updateProductUI(Product product) {
+        this.currentProduct = product;
+
         tvName.setText(product.name);
         tvPrice.setText(product.price + "");
         Glide.with(this)

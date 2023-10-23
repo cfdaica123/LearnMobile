@@ -1,9 +1,11 @@
 package son.dev.foodapp.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -14,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
+import son.dev.foodapp.CartActivity;
 import son.dev.foodapp.R;
 import son.dev.foodapp.data.model.Category;
 import son.dev.foodapp.data.model.Product;
@@ -26,6 +29,8 @@ public class HomeFragment extends Fragment implements HomeConstract.IView {
     private HomeConstract.IPresenter mPresenter;
     private RecyclerView rvCategory;
     private RecyclerView rvPopular;
+
+    private ImageView ivCart;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -35,6 +40,15 @@ public class HomeFragment extends Fragment implements HomeConstract.IView {
 
         rvPopular = rootView.findViewById(R.id.rv_popular);
         rvPopular.setLayoutManager(new GridLayoutManager(getContext(), 2));
+
+        ivCart = rootView.findViewById(R.id.iv_cart);
+        ivCart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getContext(), CartActivity.class);
+                startActivity(intent);
+            }
+        });
 
         return rootView;
     }

@@ -1,5 +1,6 @@
 package son.dev.foodapp.constract;
 
+import son.dev.foodapp.data.model.OrderItem;
 import son.dev.foodapp.data.model.Product;
 
 public interface DetailConstract {
@@ -8,5 +9,6 @@ public interface DetailConstract {
     }
     interface IPresenter{
         void getProduct(int productId);
+        void order(OrderItem od);
     }
 }

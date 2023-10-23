@@ -7,15 +7,15 @@ import androidx.room.Query;
 
 import java.util.List;
 
-import son.dev.foodapp.data.model.Oder;
+import son.dev.foodapp.data.model.Order;
 @Dao
-public interface OderDao {
-    @Query("SELECT * FROM oders")
-    List<Oder> getAll();
+public interface OrderDao {
+    @Query("SELECT * FROM orders")
+    List<Order> getAll();
 
     @Insert
-    void insertAll(Oder oder);
+    void insertAll(Order order);
 
     @Delete
-    void delete(Oder oder);
+    void delete(Order order);
 }

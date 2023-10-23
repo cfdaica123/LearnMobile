@@ -4,14 +4,14 @@ import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
-@Entity(tableName = "oders")
-public class Oder {
+import org.jetbrains.annotations.NotNull;
+
+@Entity(tableName = "orders")
+public class Order {
     @PrimaryKey
     public int Id;
     @ColumnInfo(name = "code")
     public String code;
     @ColumnInfo(name = "status")
     public String status;
-    @ColumnInfo(name = "userId")
-    public int userId;
 }

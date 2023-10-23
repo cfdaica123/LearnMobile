@@ -5,17 +5,20 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.widget.TextView;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import son.dev.foodapp.adapter.CartAdapter;
-import son.dev.foodapp.data.model.Product;
+import son.dev.foodapp.constract.CartConstract;
+import son.dev.foodapp.constract.CartPresenter;
+import son.dev.foodapp.data.model.OrderItem;
 
-public class CartActivity extends AppCompatActivity {
+public class CartActivity extends AppCompatActivity implements CartConstract.IView {
 
     private RecyclerView mRvCart;
-    private List<Product> mProductList = new ArrayList<>();
+    private CartConstract.IPresenter mPresenter;
+    private TextView tvTotal;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,26 +28,24 @@ public class CartActivity extends AppCompatActivity {
     }
 
     private void initGUI(){
-        for (int i=0; i < 10; i++){
-            Product p = new Product(
-                    1 + i,
-                    "Product " + i,
-                    "Product Description" + i,
-                    "Thumbnail URL" + i,
-                    10.0 + i,
-                    2 + i,
-                    1 + i
-
-            );
-            mProductList.add(p);
-        }
         mRvCart = findViewById(R.id.rv_cart);
         mRvCart.setLayoutManager(new LinearLayoutManager(this));
+        tvTotal = findViewById(R.id.tv_total);
 
-        CartAdapter adapter = new CartAdapter(this, mProductList);
+        mPresenter = new CartPresenter(this, this);
+        mPresenter.getOrderItemList();
+    }
+
+    @Override
+    public void updateOrderItemListUI(List<OrderItem> orderItemList) {
+        CartAdapter adapter = new CartAdapter(this, orderItemList);
         mRvCart.setAdapter(adapter);
         adapter.notifyDataSetChanged();
 
     }
 
+    @Override
+    public void updateTotalUI(double total) {
+        tvTotal.setText(total + "$");
+    }
 }
